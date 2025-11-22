@@ -11,11 +11,15 @@ public class Main{
     static public void howManyExists(){
         System.out.println("There is " + Entity.getCount() + " entities exists!");
     }
+    static public void howTo(String title){
+        System.out.println("================== How to " + title + " =================");
+    }
     static public void cut(){
         System.out.println("======================================================\n");
     }
 
     public static void main(String[] args) {
+        howTo("Static properties, initialisation, copies, constructor, duplicates");
         howManyExists();
         Entity dog = new Entity("Doge",50, 5, 5, 15, 0);
         show(dog);
@@ -33,6 +37,7 @@ public class Main{
         howManyExists();
         cut();
 
+        howTo("Method");
         dog.takeDamage(10);
         show(dog);
         show(sameDog);
@@ -40,6 +45,7 @@ public class Main{
         show(cat);
         cut();
 
+        howTo("Static method");
         Entity.fight(cat, copyDog);
         show(copyDog);
         show(cat);
@@ -51,5 +57,10 @@ public class Main{
         Entity.fight(cat, copyDog);
         show(copyDog);
         show(cat);
+        cut();
+
+        howTo("destructor"); //didn't work due to code being too short and trash cleaner have no time to delete unused code
+        howManyExists();
+        cut();
     }
 }

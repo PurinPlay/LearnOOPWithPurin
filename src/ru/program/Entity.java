@@ -1,6 +1,11 @@
 package ru.program;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Entity {
+
+    List<Entity> allies;
 
     private static int count = 0;
 
@@ -15,6 +20,7 @@ public class Entity {
     private int magicPower;
 
     public Entity(String name, int maxHealth, int defence, int agility, int strength, int magicPower){
+        allies = new ArrayList<>();
         count++;
         this.name = name;
         this.maxHealth = maxHealth;
@@ -22,6 +28,11 @@ public class Entity {
         this.agility = agility;
         this.health = this.maxHealth;
         stamina = 100;
+    }
+
+    @Override
+    protected void finalize(){
+        count--;
     }
 
     public double getHealth() {
