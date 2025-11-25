@@ -85,6 +85,14 @@ public class Entity {
         return copy;
     }
 
+    public Entity copy(boolean isClone){
+        if (isClone){
+            return self();
+        }else {
+            return copy();
+        }
+    }
+
     public String getName() {
         return name;
     }
