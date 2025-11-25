@@ -17,7 +17,7 @@ public class Main{
     static public void cut(){
         System.out.println("======================================================\n");
     }
-
+    /* OUTDATED
     public static void main(String[] args) {
         howTo("Static properties, initialisation, copies, constructor, duplicates");
         howManyExists();
@@ -62,5 +62,33 @@ public class Main{
         howTo("destructor"); //didn't work due to code being too short and trash cleaner have no time to delete unused code
         howManyExists();
         cut();
+
+        Prophesy prophesy = Prophesy.DRUID;
+
+        System.out.println(prophesy);
+
+    }*/
+    public static void main(String[] args) {
+        Entity cat2 = new Entity("Nyan cat", Prophesy.ROGUE, 100, 15, 50, 20, 0);
+        Entity cat1 = new Entity("Waffle cat", Prophesy.WARRIOR, 100, 15, 50, 20, 0);
+        howTo("Enum");
+        show(cat1);
+        show(cat2);
+
+        Entity.fight(cat1, cat2);
+        show(cat1);
+        show(cat2);
+        Entity.fight(cat1, cat2);
+        show(cat1);
+        show(cat2);
+        Entity.fight(cat1, cat2);
+        show(cat1);
+        show(cat2);
+        Entity.fight(cat1, cat2);
+        show(cat1);
+        show(cat2);
+        Entity.fight(cat1, cat2);
+        show(cat1);
+        show(cat2);
     }
 }
