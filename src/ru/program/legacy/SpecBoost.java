@@ -1,4 +1,4 @@
-package ru.program;
+package ru.program.legacy;
 
 public class SpecBoost {
     private Specs spec;

@@ -1,7 +1,4 @@
-package ru.program;
-
-import java.util.ArrayList;
-import java.util.List;
+package ru.program.legacy;
 
 public class Entity {
 
