@@ -1,4 +1,4 @@
-package ru.program.current;
+package ru.program.legacy.extandtion;
 
 public class Player extends Entity{
     protected double strength;

@@ -1,71 +1,61 @@
 package ru.program;
 
-import ru.program.current.Box;
-import ru.program.current.Entity;
-import ru.program.current.Player;
-import ru.program.current.Update;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.io.IOError;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
+    public static void iCanThrow() throws Exception{
+        System.out.println("I THREW");
+    }
     public static void main(String[] args) {
-        Entity entity = new Entity("Entity1", 50, 10) {
-            @Override
-            public void interact() {
-                System.out.println("Interaction happened");
-            }
-            @Override
-            public void update() {
-                System.out.println(name + " updated");
-            }
-        };
-        Entity entity2 = new Entity("Entity2", 50, 10) {
-            @Override
-            public void interact() {
-                System.out.println("Dont touch me!");
-            }
-            @Override
-            public void update() {
-                System.out.println(name + " updated");
-            }
-        };
-        System.out.println(entity);
-        entity.interact();
-        entity2.interact();
 
-        Player heroEgorush = new Player("Egorysh", 1000, -5, 100, 2);
-        heroEgorush.getStrength();
-        heroEgorush.interact();
-        System.out.println(heroEgorush);
-        Box boxOfCox = new Box("Box of cocks", 100, 50);
-        boxOfCox.interact();
-        boxOfCox.interact();
-        boxOfCox.loot();
-        boxOfCox.interact();
-        boxOfCox.loot();
-        boxOfCox.loot();
-        List<Entity> entities =  new ArrayList<>();
-        entities.add(entity);
-        entities.add(entity2);
-        entities.add(boxOfCox);
-        entities.add(heroEgorush);
-        for (Entity ent : entities){
-            ent.interact();
+        Scanner sc = new Scanner(System.in);
+
+        try{
+           int a = sc.nextInt();
+           System.out.println(a);
+        }catch (Exception e){
+            System.out.println("WHY DID YOU DO THIS");
+            sc.nextLine();
+        }finally {
+            System.out.println("FINAL");
         }
-        List<Update> updates =  new ArrayList<>();
-        updates.add(entity);
-        updates.add(entity2);
-        updates.add(boxOfCox);
-        updates.add(heroEgorush);
-        while (true){
-            Date start = new Date();
-            for (Update update : updates){
-                update.update();
+
+        try {
+            System.out.print("Введите число: ");
+            int a = sc.nextInt();
+            System.out.println(10/a);
+        }catch (ArithmeticException e){
+            System.out.println("Error: " + e.getMessage());
+        }catch (InputMismatchException e){
+            System.out.println("Error: You are an IDIOT");
+            sc.nextLine();
+        }catch (Exception e){
+            System.out.println("I dont know");
+        }finally{
+            System.out.println("DONE");
+        }
+
+
+        //iCanThrow();
+
+        try {
+            iCanThrow();
+        }catch (Exception | IOError b){}
+
+
+        try{
+            int temp = sc.nextInt();
+            if (temp == 67){
+                throw new Exception("User is retard");
             }
-            Date end = new Date();
-            System.out.println(end.getTime()-start.getTime());
+        }catch (InputMismatchException e) {
+            sc.nextLine();
         }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 }

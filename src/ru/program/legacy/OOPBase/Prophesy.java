@@ -1,4 +1,4 @@
-package ru.program.legacy;
+package ru.program.legacy.OOPBase;
 
 public enum Prophesy {
     WARRIOR("Воин", new SpecBoost[]{

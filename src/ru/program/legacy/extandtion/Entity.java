@@ -1,4 +1,4 @@
-package ru.program.current;
+package ru.program.legacy.extandtion;
 
 public abstract class Entity implements Update {
     protected String name;
